@@ -2,9 +2,7 @@ import { useState } from "react";
 import usePageStore from "../stores/usePageStore";
 import styles from "../styles/Home.module.scss"; 
 
-const Gradient = ({ children }) => {
-    const [colors, setColors] = useState(null);
-  
+const Gradient = ({ children, ...props }) => {  
     const blockListener = (data) => {
         const count = usePageStore.getState().wordCount;            // total word count
       
@@ -26,16 +24,16 @@ const Gradient = ({ children }) => {
         });
        
         const stringArr = (percentArray).map(vals => `${vals.color} ${vals.size}%`);
-        
-        setColors(stringArr.join(', '));
+
+        props.setGradient(stringArr.join(', '));
     }
   
+
     usePageStore.subscribe(blockListener, state => state.blocks);
-    console.log(colors);
-    
+       
     return(
         <div className={styles.bg}
-            style={{background: colors ? `linear-gradient(${colors})` : "#fff"}}>
+            style={{background: props.gradient ? `linear-gradient(${props.gradient})` : "#fff"}}>
                 {children}
         </div>
     )

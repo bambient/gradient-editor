@@ -12,11 +12,13 @@ const PageHead = () => {
   )
 }
 
-export default function Home() { 
+export default function Home({...props}) { 
+
+  console.log(props);
   return (
   <>
       <PageHead/>
-        <Gradient>
+        <Gradient {...props}>
             <TextEditor/>
         </Gradient>
   </>

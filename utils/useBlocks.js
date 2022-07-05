@@ -18,7 +18,7 @@ const getSentiment = async (text) => {
     if(!text || text.split(" ").length < 3) {
         return null;
     }
-    console.log(text.split(" ").length);
+    //console.log(text.split(" ").length);
     return axios.post('/api', { text })
         .then(res => {        
             const { neg, neutral, pos } = res.data.probability;         
