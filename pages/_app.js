@@ -12,7 +12,7 @@ function MyApp(
 
     return (
       <div className="page">
-        <Header/>
+        <Header gradient={gradient}/>
         <Component gradient={gradient} setGradient={setGradient} {...pageProps}/>
       </div>
   )

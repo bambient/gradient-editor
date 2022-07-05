@@ -1,4 +1,3 @@
-import { useState } from "react";
 import usePageStore from "../stores/usePageStore";
 import styles from "../styles/Home.module.scss"; 
 
