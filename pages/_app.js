@@ -7,7 +7,6 @@ function MyApp(
   { Component, 
     ...pageProps }) {
 
-    const [message, setMessage] = useState("hello");
     const [gradient, setGradient] = useState(null);
 
     return (
